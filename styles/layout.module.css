@@ -23,3 +23,13 @@
 .backToHome {
     margin: 3rem 0 0;
 }
+
+.footer {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footMenu {
+    font-size: smaller;
+}

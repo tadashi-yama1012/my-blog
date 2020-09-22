@@ -19,7 +19,7 @@ export default function Home({ allPostsData }) {
                         <Link href={`/posts/${id}`}>
                             <a>{title}</a>
                         </Link>
-                        <br />
+                        {' '}
                         <small className={utilStyles.lightText}>
                             <Date dateString={date} />
                         </small>

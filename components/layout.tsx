@@ -61,6 +61,10 @@ function Layout({ children, home }) {
                 </Link>
                 </div>
             )}
+            <footer className={styles.footer}>
+                <div>&copy;Tadashi Yamazaki</div>
+                <div className={styles.footMenu}><Link href="/posts/policy">policy</Link></div>
+            </footer>
         </div>
     )
 }
