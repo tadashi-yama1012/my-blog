@@ -1,6 +1,6 @@
 import Document, {Html, Head, Main, NextScript } from 'next/document'
 import { existsGaId, GA_ID, scriptTag } from '../lib/gtag'
-import { name, siteTitle } from '../lib/constants';
+import { name, siteTitle, siteUrl } from '../lib/constants';
 
 export default class MyDocument extends Document {
     render() {
@@ -27,6 +27,8 @@ export default class MyDocument extends Document {
                             </>
                     ) : null}
                     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet"></link>
+                    <link rel="alternate" type="application/rss+xml" href={`${siteUrl}/rss.xml`} title={`${siteTitle}`} />
+                    <link rel="alternate" type="application/atom+xml" href={`${siteUrl}/atom.xml`} title={`${siteTitle}`} />
                 </Head>
                 <body>
                     <Main />
