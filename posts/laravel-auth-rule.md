@@ -5,8 +5,6 @@ date: '2020-10-03 20:56:00'
 
 はじめにデータベース設計ありきでLaravelアプリの開発を始めて、Laravel標準の認証機能を使いたいという欲張りな希望に四苦八苦した話。
 
-<br>
-
 ## RegisterControllerの変更
 
 ```php
@@ -42,8 +40,6 @@ protected function create(array $data)
 
 最初は「unique:users」となっていたのだが、ユーザテーブルの名称を「M_users」にしていたので、「unique:M_users」にしなければいけなかった。普通に見逃してしまっていた。
 
-<br>
-
 ## LoginControllerの変更
 
 ```php
@@ -63,7 +59,30 @@ username()とはユーザ名に使用するカラム名を指定する関数に�
 
 ハードコードされている理由はよく分からないが、Laravelのソースコードにまで手を入れるのは避けたかったのでDB設計の方を曲げることにした。残念。
 
-<br>
+## オリジナルCanResetPasswordの作成
+
+```php
+trait MyCanResetPassword
+{
+    public function getEmailForPasswordReset()
+    {
+        return $this->USR_mail;
+    }
+    public function sendPasswordResetNotification($token)
+    {
+        $this->email = $this->USR_mail;
+        $this->notify(new ResetPasswordNotification($token));
+    }
+}
+```
+
+パスワードリセットのメール送信にもUserモデルのemailカラムが利用される。
+
+emailカラムはUSR_mailカラムになっているので、そのカラムの変更に合わせて、通常のUserモデルが実装しているCanResetPasswordトレイトのgetEmailForPasswordReset関数とsendPasswordResetNotification関数を変更しなければならない。
+
+でも直接LaravelのコードをいじるのはNGなので、Userモデルが実装しているCanResetPasswordトレイトを自前のものに変更することで対処する。上記のコードがそれだ。
+
+注意したいのは、Userモデルがメール送信を行うnotify関数ではやはりemailが参照される点。自分がカスタムしたUserモデルにはemailのプロパティが無いので、それを生やしてUSR_emailの値をセットしてやらねばならない。これに大分苦戦した。
 
 ## 終わりに
 
