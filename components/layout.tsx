@@ -17,9 +17,12 @@ function Layout({ children, home }) {
                     </Link>
                 </div>
             )}
+            <div className={styles.subMenu}>
+                <div><Link href="/archive">Archive</Link></div>
+                <div><Link href="/posts/policy">Site policy</Link></div>
+            </div>
             <footer className={styles.footer}>
                 <div>&copy;Tadashi Yamazaki</div>
-                <div className={styles.footMenu}><Link href="/posts/policy">policy</Link></div>
             </footer>
         </div>
     )

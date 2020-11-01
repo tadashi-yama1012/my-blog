@@ -24,10 +24,16 @@
     margin: 3rem 0 0;
 }
 
-.footer {
-    margin-top: 3rem;
+.subMenu {
+    margin-top: 2rem;
     display: flex;
     justify-content: space-around;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
 }
 
 .footMenu {
