@@ -10,10 +10,10 @@ export default function Post({ postDatas, date }) {
     return (
         <Layout home={false}>
             <Head>
-                <title>{`Archive:${date} - ${siteTitle}`}</title>
+                <title>{`過去記事:${date} - ${siteTitle}`}</title>
             </Head>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <h2 className={utilStyles.headingLg}>Archive:{date}</h2>
+                <h2 className={utilStyles.headingLg}>過去記事:{date}</h2>
                 <ul className={utilStyles.list}>
                     {postDatas.map(({ id, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
@@ -30,7 +30,7 @@ export default function Post({ postDatas, date }) {
             </section>
             <br/>
             <Link href={'/archive'}>
-                <a>← back to archive index</a>
+                <a>← 過去記事インデックスに戻る</a>
             </Link>
         </Layout>
     )

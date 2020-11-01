@@ -25,3 +25,14 @@ img {
   max-width: 100%;
   display: block;
 }
+
+pre, code {
+  font-family: Menlo, Consolas, Monaco, monospace, sans-serif;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+}

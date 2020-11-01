@@ -9,10 +9,10 @@ export default function Archive({ allPostsDate }: { allPostsDate: string[] }) {
     return (
         <Layout home={false}>
             <Head>
-                <title>Archive - {siteTitle}</title>
+                <title>過去記事インデックス - {siteTitle}</title>
             </Head>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <h2 className={utilStyles.headingLg}>Archive</h2>
+                <h2 className={utilStyles.headingLg}>過去記事インデックス</h2>
                 {allPostsDate.map((elm, idx) => (
                     <li key={idx}>
                         <Link href={`/archive/${elm}`}>

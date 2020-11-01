@@ -2,6 +2,7 @@ import styles from '../styles/layout.module.css'
 import Link from 'next/link'
 import Title from './title'
 import { siteTitle } from '../lib/constants';
+import SubMenu from './submenu';
 
 function Layout({ children, home }) {
     return (
@@ -13,14 +14,11 @@ function Layout({ children, home }) {
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">
-                        <a>← Back to home</a>
+                        <a>← トップページへ戻る</a>
                     </Link>
                 </div>
             )}
-            <div className={styles.subMenu}>
-                <div><Link href="/archive">Archive</Link></div>
-                <div><Link href="/posts/policy">Site policy</Link></div>
-            </div>
+            <SubMenu />
             <footer className={styles.footer}>
                 <div>&copy;Tadashi Yamazaki</div>
             </footer>
