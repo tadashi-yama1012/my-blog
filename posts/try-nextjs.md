@@ -1,6 +1,7 @@
 ---
 title: 'Next.jsのチュートリアルを試すだけ'
 date: '2020-09-24 16:07:00'
+tag: 'programming,javascript,next.js'
 ---
 
 [Next.jsのチュートリアル](https://nextjs.org/learn/basics/create-nextjs-app?utm_source=next-site&utm_medium=nav-cta&utm_campaign=next-website)を試すだけでちょー速くて割と実用的なブログサイトが作れるってすごくない？

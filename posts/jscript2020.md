@@ -1,6 +1,7 @@
 ---
 title: '今どきのJScript（2020年10月版）'
 date: '2020-10-31 16:30:00'
+tag: 'programming,javascript,jscript'
 ---
 
 最近、JScriptをいじる機会があったのでその備忘録。

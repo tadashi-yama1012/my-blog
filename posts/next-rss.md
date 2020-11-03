@@ -1,6 +1,7 @@
 ---
 title: 'Next.jsでRSSなライブラリ作った！'
 date: '2020-09-28 16:04:00'
+tag: 'programming,javascript,next.js'
 ---
 
 以前にもNext.jsなブログサイトでRSSを生成するコードを書いたのだが、あまり汎用的ではなかった。

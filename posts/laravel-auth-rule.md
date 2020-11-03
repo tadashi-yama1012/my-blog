@@ -1,6 +1,7 @@
 ---
 title: 'Laravelの認証機能をカスタマイズした時の話'
 date: '2020-10-03 20:56:00'
+tag: 'programming,php,laravel'
 ---
 
 はじめにデータベース設計ありきでLaravelアプリの開発を始めて、Laravel標準の認証機能を使いたいという欲張りな希望に四苦八苦した話。
