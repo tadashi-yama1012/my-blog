@@ -26,7 +26,8 @@ export default class MyDocument extends Document {
                                 <script dangerouslySetInnerHTML={{ __html: scriptTag }} />
                             </>
                     ) : null}
-                    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet"></link>
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
                     <link rel="alternate" type="application/rss+xml" href={`${siteUrl}/rss.xml`} title={`${siteTitle}`} />
                     <link rel="alternate" type="application/atom+xml" href={`${siteUrl}/atom.xml`} title={`${siteTitle}`} />
                 </Head>
