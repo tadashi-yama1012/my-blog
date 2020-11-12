@@ -1,8 +1,14 @@
-import Document, {Html, Head, Main, NextScript } from 'next/document'
-import { existsGaId, GA_ID, scriptTag } from '../lib/gtag'
+import NextDocument, {Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import { existsGaId, GA_ID, scriptTag } from '../lib/gtag';
 import { name, siteTitle, siteUrl } from '../lib/constants';
 
-export default class MyDocument extends Document {
+type Props = {};
+
+export default class MyDocument extends NextDocument<Props> {
+    static async getInitialProps(ctx: DocumentContext) {
+        const initialProps = await NextDocument.getInitialProps(ctx)
+        return initialProps
+    }
     render() {
         return (
             <Html lang="ja">
@@ -26,7 +32,7 @@ export default class MyDocument extends Document {
                                 <script dangerouslySetInnerHTML={{ __html: scriptTag }} />
                             </>
                     ) : null}
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
                     <link rel="alternate" type="application/rss+xml" href={`${siteUrl}/rss.xml`} title={`${siteTitle}`} />
                     <link rel="alternate" type="application/atom+xml" href={`${siteUrl}/atom.xml`} title={`${siteTitle}`} />
