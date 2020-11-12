@@ -18,6 +18,8 @@
     "next": "^10.0.1",
     "next-rss": "^1.0.0",
     "next-sitemap": "^1.2.26",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "remark": "^12.0.1",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^12.0.0"
